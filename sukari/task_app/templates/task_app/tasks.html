@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        
+    *{
+     text-align: center; 
+     background-color: rgb(29, 2, 56);  
+     color: rgb(243, 243, 50);
+    }
+
+    a{
+        color: seashell;
+        text-decoration: none;
+    }
+
+    body div{
+        margin: 3%;
+    }
+    
+    </style>
+
+    <h1>The tasks page...</h1>
+
+    <form method="POST" action="/">
+
+        {% csrf_token %}
+
+        {{form.title}}
+
+        <input type="submit" name="Create Task">
+
+    </form>
+
+    {% for task in tasks %}
+
+    <div>
+
+        {% if task.complete == True %}
+
+        <div>
+            <strike>{{task}}</strike>
+        </div>
+
+        {% else %}
+
+        <div>
+            <p>{{task}}</p>
+        </div>
+
+        {% endif %}
+
+        <button><a href="{% url 'update_task' task.id %}"> >> Update Task</a></button>
+        <button><a href="{% url 'delete' task.id %}"> >> Delete</a></button>
+        
+    </div>
+
+    {% endfor %}
+    
+</body>
+</html>

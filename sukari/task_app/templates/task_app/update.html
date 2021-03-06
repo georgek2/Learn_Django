@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        
+        *{
+         text-align: center; 
+         background-color: rgb(94, 20, 169);  
+         color: yellow;
+        }
+    
+        a{
+            color: seashell;
+        }
+    
+        
+    </style>
+    
+
+    <h1>Update Task...</h1>
+
+    <form method="POST" action="">
+
+        {% csrf_token %}
+
+        {{form}}
+        
+        <input type="submit" name="Update Task" id="">
+
+    </form>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+

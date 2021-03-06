@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        
+        *{
+         text-align: center; 
+         background-color: rgb(61, 27, 95);  
+         color: yellow;
+        }
+    
+        a{
+            color: seashell;
+        }
+    
+        
+        </style>
+    
+
+    <h2>Are you sure you want to delete..."{{item}}"?</h2>
+
+    <a href="{% url 'index' %}">Cancel</a>
+
+    <form method="POST" action="">
+
+        {% csrf_token %}
+
+        <input type="submit" name="Confirm" id="">
+
+    </form>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
