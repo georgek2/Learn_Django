@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(221, 216, 247);
+  height: 2000px;
+}
+
+header{
+    padding-bottom: 2.4%;
+}
+
+header,
+a {
+  background-color: rgb(6, 6, 117);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+header .logo {
+  font-size: 22px;
+}
+
+/* Header Navigation */
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav li {
+  padding: 14px 12px;
+  list-style: none;
+}
+
+/* Welcome and Intro section */
+
+header .intro {
+  text-align: center;
+  padding: 34px 0;
+}
+
+header .intro p {
+  padding: 10px 0;
+}
+
+
+/* Login and Join buttons */
+/* Plus social links */
+
+header #connect{
+    padding: 0 0 2.6%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+header #connect button{
+    border: none;
+    border-radius: 14px;
+}
+
+#connect button:nth-child(2){
+    border: 2px dotted whitesmoke;
+    background-color: inherit;
+    color: whitesmoke;
+}
+
+#connect button:hover{
+    color: rgb(20, 19, 19);
+    color: whitesmoke;
+    background-color: rgb(247, 167, 20);
+}
+
+/* Priorities Section */
+
+#top-three {
+  padding-top: 14px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  max-width: 980px;
+  width: 100%;
+  margin: auto;
+  /* background-color: rgb(132, 176, 241); */
+}
+
+.priorities .priority {
+  border: 2px solid rgb(139, 136, 131);
+  margin: 10px 10px;
+  border-radius: 12px;
+  /* max-width: 280px; */
+}
+
+#top-three .title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 3px 0 6px;
+}
+
+#top-three .priority {
+  padding: 10px 6px;
+}
+
+#top-three .images {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 280px;
+  align-items: center;
+  padding: 4% 0;
+}
+
+#top-three img {
+  max-width: 80%;
+  align-items: center;
+}
+
+#top-three .priority {
+  display: flex;
+  flex-direction: column;
+  /* bottom: 0; */
+}
+
+#top-three button {
+  margin: 8% 0 4%;
+  padding: 4% 8%;
+  border-style: none;
+  border-radius: 12px;
+  background-color: rgb(3, 3, 185);
+  color: whitesmoke;
+}
+
+/* #targets {
+  display: flex;
+  justify-content: space-around;
+} */
+
+#targets {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 1.8%;
+    margin: auto;
+    align-content: center;
+    max-width: 600px;
+}
+
+#targets .target-item{
+    background-color: rgb(197, 197, 5);
+}
+
+#targets .target-head{
+    font-size: 24px;
+    padding-bottom: 12px;
+    /* width: 400px; */
+    text-align: center;
+}
+
+#targets .target-tasks{
+    font-size: 20px;
+}
+
+#targets ul li{
+    line-height: 28px;
+    text-align: end;
+    padding-right: 8px;
+}
+

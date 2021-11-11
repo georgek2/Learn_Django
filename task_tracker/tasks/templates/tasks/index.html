@@ -1,0 +1,187 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calender Mananger</title>
+
+    <link rel="stylesheet" href="{% static '/css/main.css' %}" />
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      header,
+      a {
+        background-color: rgb(6, 6, 117);
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
+
+      header .logo {
+        font-size: 22px;
+      }
+
+      header .intro {
+        text-align: center;
+        padding: 34px 0;
+      }
+
+      header .intro p {
+        padding: 10px 0;
+      }
+
+      header nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      header nav ul {
+        display: flex;
+      }
+
+      header nav li {
+        padding: 14px 12px;
+        list-style: none;
+      }
+    </style>
+
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="#">GmnaCentral</a>
+        </div>
+        <ul>
+          <li>Home</li>
+          <li>Services</li>
+          <li>Tutorials</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+
+      <div class="intro">
+        <h1>Welcome to GmnaCentral</h1>
+        <p>Let's Learn AI and Data Science the right way..!</p>
+      </div>
+      <div id="connect">
+        <div class="button">
+          <button style="width: 224px; height: 36px">Login</button>
+          <button style="width: 224px; height: 36px">Join the Community</button>
+        </div>
+        <div class="socials"></div>
+      </div>
+    </header>
+
+    <p style="font-size: 28px; text-align: center; padding: 2.6% 0">
+      Weekly Priorities
+    </p>
+    <div id="top-three" class="priorities">
+      <div class="one priority">
+        <p class="title">Model Interpretability</p>
+
+        <p class="body">
+          Understand what it means to use ML Models to extract actionable
+          insights from your data
+        </p>
+        <div class="images">
+          <img src="{% static '/images/four.jpg' %}" alt="" />
+        </div>
+        <button class="button">Read more</button>
+      </div>
+      <div class="two priority">
+        <p class="title">Model Deployment</p>
+        <p class="body">
+          Understand what it means to use ML Models to extract actionable
+          insights from your data
+        </p>
+        <div class="images">
+          <img src="{% static '/images/two.jpg' %}" alt="" />
+        </div>
+        <button class="button">Read more</button>
+      </div>
+      <div class="three priority">
+        <p class="title">Data Architecture</p>
+        <p class="body">
+          Understand what it means to use ML Models to extract actionable
+          insights from your data
+        </p>
+        <div class="images">
+          <img src="{% static '/images/three.jpg' %}" alt="" />
+        </div>
+        <button class="button">Read more</button>
+      </div>
+      <!-- <div class="three priority">
+            <p class="title">Data Architecture</p>
+            <p class="body">
+                Understand what it means to use ML Models
+                to extract actionable insights from your data
+            </p>
+        </div>
+        <div class="three priority">
+            <p class="title">Data Architecture</p>
+            <p class="body">
+                Understand what it means to use ML Models
+                to extract actionable insights from your data
+            </p>
+        </div> -->
+    </div>
+    <p
+      style="
+        text-align: center;
+        font-size: 28px;
+        padding: 2.6% 0 1%;
+        border-bottom: 2px solid rgb(46, 43, 43);
+        width: 33%;
+        margin: auto;
+      "
+    >
+      Target Milestones
+    </p>
+
+    <div id="targets">
+      <div class="target-item">
+        <div class="target-head">
+          <p>Explaining ML Models</p>
+        </div>
+        <div class="target-tasks">
+          <ul>
+            <li>Intro to</li>
+            <li>Practical Implementaion Example</li>
+            <li>Repository & Article on Topic</li>
+          </ul>
+        </div>
+      </div>
+      <div class="target-item">
+        <div class="target-head">
+          <p>Deploying Models to Production</p>
+        </div>
+        <div class="target-tasks">
+          <ul>
+            <li>Intro to Model Deployment</li>
+            <li>Practical Implementaion Example</li>
+            <li>Repository & Article on Topic</li>
+          </ul>
+        </div>
+      </div>
+      <div class="target-item">
+        <div class="target-head">
+          <p>Developing Data Systems and Value-Chain</p>
+        </div>
+        <div class="target-tasks">
+          <ul>
+            <li>Intro to Data Pipelines & Architecture</li>
+            <li>Practical Implementaion Example</li>
+            <li>Repository & Article on Topic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
