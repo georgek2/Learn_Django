@@ -8,13 +8,14 @@ body {
   height: 2000px;
 }
 
-header{
-    padding-bottom: 2.4%;
+/* Header Navigation */
+/* Plus all the children elements */
+header {
+  padding-bottom: 2.4%;
 }
 
-header,
-a {
-  background-color: rgb(6, 6, 117);
+header,a {
+  /* background-color: rgb(6, 6, 117); */
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
@@ -22,8 +23,6 @@ a {
 header .logo {
   font-size: 22px;
 }
-
-/* Header Navigation */
 
 header nav {
   display: flex;
@@ -51,32 +50,31 @@ header .intro p {
   padding: 10px 0;
 }
 
-
 /* Login and Join buttons */
 /* Plus social links */
 
-header #connect{
-    padding: 0 0 2.6%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+header #connect {
+  padding: 0 0 2.6%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-header #connect button{
-    border: none;
-    border-radius: 14px;
+header #connect button {
+  border: none;
+  border-radius: 14px;
 }
 
-#connect button:nth-child(2){
-    border: 2px dotted whitesmoke;
-    background-color: inherit;
-    color: whitesmoke;
+#connect button:nth-child(2) {
+  border: 2px dotted whitesmoke;
+  background-color: inherit;
+  color: whitesmoke;
 }
 
-#connect button:hover{
-    color: rgb(20, 19, 19);
-    color: whitesmoke;
-    background-color: rgb(247, 167, 20);
+#connect button:hover {
+  color: rgb(20, 19, 19);
+  color: whitesmoke;
+  background-color: rgb(247, 167, 20);
 }
 
 /* Priorities Section */
@@ -84,30 +82,27 @@ header #connect button{
 #top-three {
   padding-top: 14px;
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   justify-content: space-around;
   max-width: 980px;
-  width: 100%;
   margin: auto;
-  /* background-color: rgb(132, 176, 241); */
 }
 
 .priorities .priority {
+  display: flex;
+  flex-direction: column;
   border: 2px solid rgb(139, 136, 131);
-  margin: 10px 10px;
+  margin: 10px 4px;
+  padding: 10px 12px;
   border-radius: 12px;
-  /* max-width: 280px; */
+  max-width: 280px;
 }
 
 #top-three .title {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  padding: 3px 0 6px;
-}
-
-#top-three .priority {
-  padding: 10px 6px;
+  padding: 4px 0 6px;
 }
 
 #top-three .images {
@@ -115,23 +110,15 @@ header #connect button{
   justify-content: center;
   margin: auto;
   max-width: 280px;
-  align-items: center;
   padding: 4% 0;
 }
 
 #top-three img {
   max-width: 80%;
-  align-items: center;
-}
-
-#top-three .priority {
-  display: flex;
-  flex-direction: column;
-  /* bottom: 0; */
 }
 
 #top-three button {
-  margin: 8% 0 4%;
+  margin: 6% 0 4%;
   padding: 4% 8%;
   border-style: none;
   border-radius: 12px;
@@ -139,39 +126,41 @@ header #connect button{
   color: whitesmoke;
 }
 
-/* #targets {
-  display: flex;
-  justify-content: space-around;
-} */
+/* Target Milestones */
 
 #targets {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-top: 1.8%;
-    margin: auto;
-    align-content: center;
-    max-width: 600px;
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: space-around; */
+  padding-top: 1.8%;
+  margin: auto;
+  align-content: center;
+  max-width: 600px;
 }
 
-#targets .target-item{
-    background-color: rgb(197, 197, 5);
+#targets .target-item {
+  border: 2px solid rgb(139, 136, 131);
+  /* background-color: rgb(197, 197, 5); */
+  background-color: rgb(42, 39, 206);
+  margin: 4% 1%;
+  padding: 8px 10px 24px 0;
+  border-radius: 12px;
 }
 
-#targets .target-head{
-    font-size: 24px;
-    padding-bottom: 12px;
-    /* width: 400px; */
-    text-align: center;
+#targets .target-head {
+  font-size: 24px;
+  padding: 10px 0 14px 18px;
+  width: 480px;
+  text-align: start;
 }
 
-#targets .target-tasks{
-    font-size: 20px;
+#targets .target-tasks {
+  font-size: 38px;
 }
 
-#targets ul li{
-    line-height: 28px;
-    text-align: end;
-    padding-right: 8px;
+#targets ul li {
+  line-height: 28px;
+  text-align: end;
+  padding-right: 8px;
+  list-style: none;
 }
-
