@@ -12,10 +12,10 @@ body {
 /* Plus all the children elements */
 header {
   padding-bottom: 2.4%;
+  background-color: rgb(6, 6, 117);
 }
 
 header,a {
-  /* background-color: rgb(6, 6, 117); */
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
@@ -80,7 +80,7 @@ header #connect button {
 /* Priorities Section */
 
 #top-three {
-  padding-top: 14px;
+  padding-top: 18px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -122,8 +122,13 @@ header #connect button {
   padding: 4% 8%;
   border-style: none;
   border-radius: 12px;
-  background-color: rgb(3, 3, 185);
+  background-color: #0303b9;
   color: whitesmoke;
+}
+
+#top-three button:hover{
+  color: whitesmoke;
+  background-color: rgb(247, 167, 20);
 }
 
 /* Target Milestones */
@@ -140,8 +145,7 @@ header #connect button {
 
 #targets .target-item {
   border: 2px solid rgb(139, 136, 131);
-  /* background-color: rgb(197, 197, 5); */
-  background-color: rgb(42, 39, 206);
+  background-color: rgb(197, 197, 5);
   margin: 4% 1%;
   padding: 8px 10px 24px 0;
   border-radius: 12px;
@@ -155,7 +159,7 @@ header #connect button {
 }
 
 #targets .target-tasks {
-  font-size: 38px;
+  font-size: 20px;
 }
 
 #targets ul li {

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do App</title>
+</head>
+<body>
+
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    </style>
+
+    <h1>To-Do List</h1>
+
+    <!-- Task form -->
+    <form method="POST" action="/">
+
+        {% csrf_token %}
+
+        {{form.title}}
+
+        <input type="submit" name="create task">
+
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+        <li><a href="#">{{task.title}}</a></li>
+        <button><a href="{% url 'edit task' task.id %}">Edit Task</a></button>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
+
+
+
+
