@@ -1,0 +1,62 @@
+<!-- All the components in the homepage -->
+{% extends 'notes/index.html' %}
+
+<!-- The data specific to a topic -->
+
+{% block title %}
+<title>Topics: Week One</title>
+{% endblock title %}
+
+{% block content %}
+
+    <!-- <h1>The Machine Learning Page</h1> -->
+
+    <div id="content" style="margin-left: 4.5%; max-width: 680px">
+
+        <h2 style="font-size: 30px"> {{ name }} </h2>
+
+        <h3><b>~ Objective ~</b></h3>
+        
+        <p id="objective"> {{ item.objective }} </p>
+        <br/><br />
+
+        <h3><b>~ Aim ~</b></h3>
+
+        <p id="aim"> {{ item.aim }} </p>
+        <br/><br />
+
+        <h3><b>~ Target ~</b></h3>
+        <p id="Target"> {{ item.target }} </p>
+
+    </div>
+
+
+{% endblock content %}
+
+{% block output %}
+
+    <h2>The Output</h2>
+
+    <h3><b>~ Key Takeway ~</b></h3>
+    <h3><b>~ Applications ~</b></h3>
+    <h3><b>~ ~</b></h3>
+    
+{% endblock output %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

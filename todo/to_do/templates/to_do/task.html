@@ -16,6 +16,42 @@
 
         <input type="submit" name="edit task">
     </form>
+
+    <h2>{{task.title}}</h2>
+
+    <button><a href="{% url 'homepage' %}">Home</a></button>
     
 </body>
 </html>
+
+<div class="page-wrapper">
+
+    <div class="landing">
+        <div class="index">
+            <h1>{{post.title}}}</h1>
+            <img src="" alt="">
+            <div class="author"></div>
+        </div>
+        <div class="related-content">
+            {% for i in post.related %}
+            <p>{{i}}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <main class="article">
+        <div class="article-body">
+            <div class="tag-line">
+                {{post.tagLine}}
+            </div>
+            <div class="intro">
+                {{post.intro}}
+            </div>
+        </div>
+        <div class="aside">
+
+        </div>
+    </main>
+
+</div>
+

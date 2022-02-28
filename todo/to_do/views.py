@@ -1,3 +1,4 @@
+from typing import Text
 from django.shortcuts import render, redirect
 from .models import *
 
@@ -45,7 +46,16 @@ def update(request, pk):
     return render(request, 'to_do/task.html', context)
 
 
+def articlePage(request, pk):
 
+    post = Post.objects.get(nam)
+
+
+    context = {
+        'post': post
+    }
+
+    return render(request, 'posts/post.html', context)
 
 
 

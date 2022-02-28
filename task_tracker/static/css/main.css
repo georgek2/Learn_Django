@@ -143,9 +143,14 @@ header #connect button {
   max-width: 600px;
 }
 
+.target{
+  display: flex;
+  justify-content: space-around;
+}
+
 #targets .target-item {
   border: 2px solid rgb(139, 136, 131);
-  background-color: rgb(197, 197, 5);
+  /* background-color: rgb(197, 197, 5); */
   margin: 4% 1%;
   padding: 8px 10px 24px 0;
   border-radius: 12px;

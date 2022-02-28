@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {% block title %}
+    <title>MyNotes App</title>
+    {% endblock %}
+
+    <link rel="stylesheet" href="/static/css/index.css" />
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(219, 168, 150);
+      }
+
+      .sidebar {
+        border: 2px solid darkred;
+        min-width: 338px;
+        border-radius: 8px;
+        height: 350px;
+        margin-left: 16px;
+      }
+
+      .sidebar .head {
+        text-align: center;
+      }
+
+      .sidebar #month {
+        background-color: rgba(42, 11, 43, 0.377);
+        color: whitesmoke;
+      }
+
+      .sidebar #week {
+        border-bottom: 2px solid maroon;
+        /* border-radius: 5px; */
+      }
+
+      #weeks{
+        background-color: maroon;
+        padding: 6px 0;
+        display: flex;
+        justify-content: space-around;
+        color: whitesmoke;
+        margin-bottom: 20px;
+      }
+
+      #weeks a{
+        color: whitesmoke;
+      }
+      
+      #weeks div{
+        padding: 10px 10px;
+        /* background-color: violet; */
+        border-radius: 4px;
+      }
+
+      #weeks div:hover{
+        background-color: rgb(219, 168, 150);
+      }
+
+      #weeks a:hover{
+        color: black;
+      }
+
+      main ul {
+        list-style: none;
+        padding-left: 13px;
+        font-size: 17px;
+      }
+
+      ul li {
+        padding: 6px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(14, 10, 10);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        display: flex;
+        /* padding-right: 4px; */
+      }
+
+      #content h2 {
+        padding-bottom: 20px;
+      }
+
+      section {
+        max-width: 200px;
+        margin-left: 34%;
+        /* background-color: black; */
+      }
+    </style>
+
+    <header style="padding: 30px 0 40px">
+      <div class="logo">
+        <p style="font-size: 38px; color: rgb(107, 19, 19); padding-left: 22%">
+          MyNotes App
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <div class="sidebar">
+        <div class="head">
+          <p id="month" style="font-size: 27px; padding: 20px 0">February</p>
+          <p id="week" style="font-size: 17px; padding: 4px 0">
+            <a href="{% url 'homepage' %}">Weeks</a>
+          </p>
+          <div id="weeks">
+            <div><a href="">One</a></div>
+            <div><a href="">Two</a></div>
+            <div><a href="">Three</a></div>
+            <div><a href="">Four</a></div>
+          </div>
+        </div>
+        <ul>
+          {% for topic in topics %}
+
+          <li><a href="{% url 'topic' topic.id %}">{{ topic.title }}</a></li>
+
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% block content %} {% endblock %}
+    </main>
+
+    <section id="output">
+      
+      {% block output %}
+      
+      
+      {% endblock output %}
+    
+    </section>
+  </body>
+</html>

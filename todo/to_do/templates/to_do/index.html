@@ -33,8 +33,16 @@
 
     <ul>
         {% for task in tasks %}
-        <li><a href="#">{{task.title}}</a></li>
-        <button><a href="{% url 'edit task' task.id %}">Edit Task</a></button>
+
+            {% if task.complete %}
+            <strike><li><a href="#">{{task.title}}</a> <input type="checkbox" value="checked"></li></strike>
+            <button><a href="{% url 'edit task' task.id %}">Edit Task</a></button>
+            {% else %}
+            <li><a href="#">{{task.title}}</a></li>
+            <button><a href="{% url 'edit task' task.id %}">Edit Task</a></button>
+
+            {% endif %}
+
         {% endfor %}
     </ul>
     

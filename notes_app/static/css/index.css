@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: rgb(219, 168, 150);
+  }
+
+  .sidebar {
+    border: 2px solid darkred;
+    min-width: 338px;
+    border-radius: 8px;
+    height: 350px;
+    margin-left: 16px;
+  }
+
+  .sidebar .head {
+    text-align: center;
+  }
+
+  .sidebar #month {
+    background-color: maroon;
+    color: whitesmoke;
+  }
+
+  .sidebar #week {
+    border-bottom: 2px solid maroon;
+    /* border-radius: 5px; */
+  }
+
+  #weeks{
+    background-color: maroon;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-around;
+    color: whitesmoke;
+    margin-bottom: 20px;
+  }
+
+  #weeks a{
+    color: whitesmoke;
+  }
+  
+  #weeks div{
+    padding: 10px 10px;
+    /* background-color: violet; */
+    border-radius: 4px;
+  }
+
+  #weeks div:hover{
+    background-color: rgb(219, 168, 150);
+  }
+
+  #weeks a:hover{
+    color: black;
+  }
+
+  main ul {
+    list-style: none;
+    padding-left: 13px;
+    font-size: 17px;
+  }
+
+  ul li {
+    padding: 6px 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(14, 10, 10);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  main {
+    display: flex;
+    /* padding-right: 4px; */
+  }
+
+  #content h2 {
+    padding-bottom: 20px;
+  }
+
+  section {
+    max-width: 200px;
+    margin-left: 34%;
+    /* background-color: black; */
+  }
