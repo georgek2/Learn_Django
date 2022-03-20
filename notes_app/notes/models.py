@@ -10,6 +10,8 @@ class Topic(models.Model):
 
     title = models.CharField(max_length=200)
 
+    week = models.CharField(max_length=200)
+
     objective = models.TextField()
 
     aim = models.TextField()
@@ -22,10 +24,16 @@ class Topic(models.Model):
         return self.title
 
 
+class Output(models.Model):
+    
+    foreign = models.ForeignKey('Topic', on_delete=models.CASCADE)
+    topic = models.CharField(max_length=20)
+    takeaway = models.TextField()
+    applications = models.TextField()
 
 
+    def __str__(self):
 
-
-
+        return self.topic
 
 

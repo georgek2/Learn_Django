@@ -22,6 +22,23 @@
       }
       body {
         background-color: rgb(219, 168, 150);
+        min-height: 1000px;
+      }
+
+      .logo{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .logo button{
+        font-size: 17px;
+        border-style: none;
+        border-radius: 4px;
+        padding: 5px 8px;
+        background-color: rgb(71, 5, 71);
+        background-color: maroon;
+        color: whitesmoke;
       }
 
       .sidebar {
@@ -36,41 +53,34 @@
         text-align: center;
       }
 
-      .sidebar #month {
-        background-color: rgba(42, 11, 43, 0.377);
-        color: whitesmoke;
+      .sidebar .maroon{
+        background-color: maroon;
       }
 
-      .sidebar #week {
-        border-bottom: 2px solid maroon;
-        /* border-radius: 5px; */
+      .sidebar #month {
+        color: whitesmoke;
       }
 
       #weeks{
-        background-color: maroon;
         padding: 6px 0;
         display: flex;
         justify-content: space-around;
-        color: whitesmoke;
-        margin-bottom: 20px;
+      }
+      
+      #weeks p{
+        padding: 10px 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: maroon;
+      }
+
+      #weeks p:hover{
+        background-color: rgb(219, 168, 150);
+        color: black;
       }
 
       #weeks a{
         color: whitesmoke;
-      }
-      
-      #weeks div{
-        padding: 10px 10px;
-        /* background-color: violet; */
-        border-radius: 4px;
-      }
-
-      #weeks div:hover{
-        background-color: rgb(219, 168, 150);
-      }
-
-      #weeks a:hover{
-        color: black;
       }
 
       main ul {
@@ -83,9 +93,8 @@
         padding: 6px 0;
       }
 
-      a {
+      main ul li a {
         text-decoration: none;
-        color: rgb(14, 10, 10);
       }
 
       a:hover {
@@ -101,33 +110,37 @@
         padding-bottom: 20px;
       }
 
-      section {
-        max-width: 200px;
-        margin-left: 34%;
-        /* background-color: black; */
+      #output{
+        border: 2px solid maroon;
+        max-width: 800px;
+        margin: 20px auto 20px;
+        border-radius: 8px;
+        padding: 20px 16px;
       }
     </style>
 
     <header style="padding: 30px 0 40px">
       <div class="logo">
-        <p style="font-size: 38px; color: rgb(107, 19, 19); padding-left: 22%">
+        <p style="font-size: 38px; color: rgb(107, 19, 19);">
           MyNotes App
         </p>
+        <div id="update">
+          <button>Update Topics</button>
+        </div>
       </div>
     </header>
 
     <main>
       <div class="sidebar">
         <div class="head">
-          <p id="month" style="font-size: 27px; padding: 20px 0">February</p>
-          <p id="week" style="font-size: 17px; padding: 4px 0">
-            <a href="{% url 'homepage' %}">Weeks</a>
-          </p>
-          <div id="weeks">
-            <div><a href="">One</a></div>
-            <div><a href="">Two</a></div>
-            <div><a href="">Three</a></div>
-            <div><a href="">Four</a></div>
+          <p id="month" class="maroon" style="font-size: 27px; padding: 20px 0">February</p>
+          <p id="week" style="font-size: 17px; padding: 6px 0;">
+            <a href="{% url 'homepage' %}">Weekly Topics</a></p>
+          <div id="weeks" class="maroon">
+            <a href="#"><p>One</p></a>            
+            <a href="#"><p>Two</p></a>            
+            <a href="#"><p>Three</p></a>            
+            <a href="#"><p>Four</p></a>            
           </div>
         </div>
         <ul>
@@ -136,19 +149,19 @@
           <li><a href="{% url 'topic' topic.id %}">{{ topic.title }}</a></li>
 
           {% endfor %}
+          
+          <li><a href="{% url 'topic' 1 %}">Other...</a></li>
         </ul>
       </div>
 
-      {% block content %} {% endblock %}
+      {% block content %}
+      
+      {% endblock %}
     </main>
 
-    <section id="output">
-      
-      {% block output %}
-      
-      
-      {% endblock output %}
+    {% block output %}
     
-    </section>
+    
+    {% endblock output %}
   </body>
 </html>

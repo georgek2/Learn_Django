@@ -8,17 +8,21 @@ from .models import Topic
 def homepage(request):
 
     topics = Topic.objects.all()
-
     context = {
         'topics' : topics,
     }
 
-    return render(request, 'notes/index.html', context)
+    return render(request, 'notes/home.html', context)
 
 
 def topics(request):
 
-    return render(request, 'notes/topics.html')
+    topics = Topic.objects.all()
+
+    context = {
+        'topics' : topics,
+    }
+    return render(request, 'notes/home.html', context)
 
 
 def topic(request, id):
@@ -31,7 +35,7 @@ def topic(request, id):
     context = {
         'item' : item,
         'name' : name,
-        'topics' : topics
+        'topics' : topics,
     }
 
     return render(request, 'notes/topic.html', context)

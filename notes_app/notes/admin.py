@@ -4,10 +4,9 @@ from . import models
 
 # Register your models here.
 
-
 admin.site.register(models.Topic)
 
-
+admin.site.register(models.Output)
 
 
 

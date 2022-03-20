@@ -1,10 +1,10 @@
-<!-- All the components in the homepage -->
-{% extends 'notes/index.html' %}
+<!-- All the components in the base template -->
+{% extends 'notes/base.html' %}
 
 <!-- The data specific to a topic -->
 
 {% block title %}
-<title>Topics: Week One</title>
+<title>Topic - {{ name }} </title>
 {% endblock title %}
 
 {% block content %}
@@ -35,11 +35,12 @@
 
 {% block output %}
 
-    <h2>The Output</h2>
+    <div id="output">
+        <h2>The Output</h2>
 
-    <h3><b>~ Key Takeway ~</b></h3>
-    <h3><b>~ Applications ~</b></h3>
-    <h3><b>~ ~</b></h3>
+        <h3><b>~ Key Takeaway ~</b></h3>
+        <h3><b>~ Applications & Benefits ~</b></h3>
+    </div>
     
 {% endblock output %}
 
