@@ -27,7 +27,6 @@ def homePage(request):
 
 
 def update(request, pk):
-
     task = Task.objects.get(id=pk)
     form = TaskForm(instance=task)
 

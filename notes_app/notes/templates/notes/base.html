@@ -85,12 +85,12 @@
 
       main ul {
         list-style: none;
-        padding-left: 13px;
+        padding-left: 10px;
         font-size: 17px;
       }
 
       ul li {
-        padding: 6px 0;
+        padding: 4px 0;
       }
 
       main ul li a {
@@ -117,6 +117,20 @@
         border-radius: 8px;
         padding: 20px 16px;
       }
+
+      #update{
+        margin-left: 4.5%;
+        padding-left: 20px;
+      }
+
+      #update form{
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        font-size: larger;
+      }
+
+
     </style>
 
     <header style="padding: 30px 0 40px">
@@ -125,7 +139,7 @@
           MyNotes App
         </p>
         <div id="update">
-          <button>Update Topics</button>
+          <a href="{% url 'add' %}"><button>Add New Topic</button></a>
         </div>
       </div>
     </header>
@@ -137,20 +151,22 @@
           <p id="week" style="font-size: 17px; padding: 6px 0;">
             <a href="{% url 'homepage' %}">Weekly Topics</a></p>
           <div id="weeks" class="maroon">
-            <a href="#"><p>One</p></a>            
-            <a href="#"><p>Two</p></a>            
-            <a href="#"><p>Three</p></a>            
-            <a href="#"><p>Four</p></a>            
+            <a href="{% url 'topic' 1 %}"><p>One</p></a>            
+            <a href="{% url 'topic' 2 %}"><p>Two</p></a>            
+            <a href="{% url 'topic' 3 %}"><p>Three</p></a>            
+            <a href="{% url 'topic' 4 %}"><p>Four</p></a>            
           </div>
         </div>
         <ul>
           {% for topic in topics %}
 
-          <li><a href="{% url 'topic' topic.id %}">{{ topic.title }}</a></li>
+          <li><a style="background-color: maroon; color: whitesmoke; padding: 3px; font-size: small;" 
+            href="{% url 'edit' topic.id %}">Edit</a>
+            <a href="{% url 'topic' topic.id %}">{{ topic.title }}</a></li>
+          
 
           {% endfor %}
           
-          <li><a href="{% url 'topic' 1 %}">Other...</a></li>
         </ul>
       </div>
 

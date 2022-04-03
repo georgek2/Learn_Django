@@ -1,0 +1,34 @@
+{% extends 'notes/base.html' %}
+
+
+{% block content %}
+
+    <div id="update">
+        <h1>Update Weekly Topics</h1>
+
+        <form action="" method="POST">
+
+            {% csrf_token %}
+
+            {{ form }}
+            <input style="padding: 10px 0; font-size: larger; background-color: maroon; color: whitesmoke; border-style: none;" 
+            type="submit" value="submit">
+        </form>
+
+    </div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
