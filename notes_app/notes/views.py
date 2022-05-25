@@ -75,7 +75,10 @@ def add_topic(request):
     return render(request, 'notes/update.html', context)
 
 
+def another(request):
 
+
+    return render(request, 'notes/another.html')
 
 
 
