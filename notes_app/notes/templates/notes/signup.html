@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          background-color: rgb(219, 168, 150);
+          min-height: 1000px;
+        }
+  
+        .logo{
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+  
+        .logo button{
+          font-size: 17px;
+          border-style: none;
+          border-radius: 4px;
+          padding: 5px 8px;
+          background-color: rgb(71, 5, 71);
+          background-color: maroon;
+          color: whitesmoke;
+        }
+  
+        .sidebar {
+          border: 2px solid darkred;
+          min-width: 338px;
+          border-radius: 8px;
+          height: 350px;
+          margin-left: 16px;
+        }
+  
+        .sidebar .head {
+          text-align: center;
+        }
+  
+        .sidebar .maroon{
+          background-color: maroon;
+        }
+  
+        .sidebar #month {
+          color: whitesmoke;
+        }
+  
+        #weeks{
+          padding: 6px 0;
+          display: flex;
+          justify-content: space-around;
+        }
+        
+        #weeks p{
+          padding: 10px 10px;
+          border: none;
+          border-radius: 4px;
+          background-color: maroon;
+        }
+  
+        #weeks p:hover{
+          background-color: rgb(219, 168, 150);
+          color: black;
+        }
+  
+        #weeks a{
+          color: whitesmoke;
+        }
+  
+        main ul {
+          list-style: none;
+          padding-left: 10px;
+          font-size: 17px;
+        }
+  
+        ul li {
+          padding: 4px 0;
+        }
+  
+        main ul li a {
+          text-decoration: none;
+        }
+  
+        a:hover {
+          text-decoration: underline;
+        }
+  
+        main {
+          display: flex;
+          /* padding-right: 4px; */
+        }
+  
+        #content h2 {
+          padding-bottom: 20px;
+        }
+  
+        #output{
+          border: 2px solid maroon;
+          max-width: 800px;
+          margin: 20px auto 20px;
+          border-radius: 8px;
+          padding: 20px 16px;
+        }
+  
+        #update{
+          margin-left: 4.5%;
+          padding-left: 20px;
+        }
+  
+        #update form{
+          display: flex;
+          flex-direction: column;
+          width: 500px;
+          font-size: larger;
+        }
+  
+  
+    </style>
+
+    <header style="padding: 30px 0 40px">
+        <div class="logo">
+          <p style="font-size: 38px; color: rgb(107, 19, 19);">
+            MyNotes App
+          </p>
+          <div id="update">
+            <a href="{% url 'add' %}"><button>Add New Topic</button></a>
+          </div>
+        </div>
+    </header>
+  
+    <div class="login">
+      <h2>Please Signup for an Account...</h2>
+
+      <form action="" style="display: inline-block; flex-direction: column;">
+          <!-- Username<input type="text" placeholder="Enter your username..">
+          Password<input type="text" placeholder="Enter your password..">
+          Confirm Password<input type="text" placeholder="Re-type your password..">
+         -->
+         {{ form }}
+
+      </form>
+
+    </div>
+
+
+    
+</body>
+</html>
+

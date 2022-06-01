@@ -8,3 +8,13 @@ class TopicForm(ModelForm):
         model = Topic
         fields = '__all__'
 
+
+class UserForm(ModelForm):
+
+    class Meta:
+
+        model = User
+        fields = ['username', 'password']
+
+
+

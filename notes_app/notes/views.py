@@ -2,7 +2,7 @@
 from django.shortcuts import redirect, render
 from .models import Topic
 
-from .forms import TopicForm
+from .forms import TopicForm, UserForm
 
 # Create your views here.
 
@@ -75,10 +75,22 @@ def add_topic(request):
     return render(request, 'notes/update.html', context)
 
 
-def another(request):
+def signup(request):
+
+    form = UserForm()
+
+    context = {'form': form}
+
+    return render(request, 'notes/signup.html', context)
 
 
-    return render(request, 'notes/another.html')
+def login(request):
+
+    form = UserForm()
+
+    context = {'form' : form}
+
+    return render(request, 'notes/login.html', context)
 
 
 
