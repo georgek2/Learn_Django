@@ -1,8 +1,9 @@
 
 from django.shortcuts import redirect, render
 from .models import Topic
-
 from .forms import TopicForm, UserForm
+
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
@@ -76,19 +77,22 @@ def add_topic(request):
 
 
 def signup(request):
-
     form = UserForm()
-
     context = {'form': form}
+
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            redirect('login')
 
     return render(request, 'notes/signup.html', context)
 
 
 def login(request):
-
     form = UserForm()
-
-    context = {'form' : form}
+    context = {'form': form}
 
     return render(request, 'notes/login.html', context)
 
