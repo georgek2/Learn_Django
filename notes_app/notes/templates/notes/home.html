@@ -2,7 +2,30 @@
 
 {% block content %}
 
-<h1 style="padding-left: 4%;">Weekly Topic Priorities</h1>
+<div style="padding-left: 4%;" class="content">
+
+    <h1 style="margin-bottom: 6px;">Weekly Topic Priorities</h1>
+
+    {% for topic in topics %}
+
+    <h3 style="margin-top: 10px;">Week {{ topic.week }}: {{ topic.title }}</h3>
+
+    <p class="item">~ Objective ~</p>
+    <p>
+        {{ topic.objective }}
+    </p>
+    <p class="item">~ Aim ~</p>
+    <p>
+        {{ topic.aim }}
+    </p>
+    <p class="item">~ Target ~</p>
+    <p>
+        {{ topic.target }}
+    </p>
+    
+    {% endfor %}
+
+</div>
 
 {% endblock content %}
 

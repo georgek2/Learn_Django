@@ -18,7 +18,6 @@ class Topic(models.Model):
 
     target = models.TextField()
 
-
     def __str__(self):
 
         return self.title

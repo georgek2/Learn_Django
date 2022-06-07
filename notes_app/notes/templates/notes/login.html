@@ -130,6 +130,7 @@
         <a href="{% url 'signup' %}"><button>Signup</button></a>
       </div>
       <div class="logo">
+        <a style="font-size: 28px; color: rgb(107, 19, 19)" href="{% url 'homepage' %}"><button>Home</button></a>
         <p style="font-size: 38px; color: rgb(107, 19, 19)">MyNotes App</p>
         <div id="update">
           <a href="{% url 'add' %}"><button>Add New Topic</button></a>
@@ -141,8 +142,7 @@
       <h2>Please Login to your Account...</h2>
 
       <form action="" style="display: inline-block; flex-direction: column">
-        {{ form.username.label }}
-        {{ form.password }}
+        {{ form.as_p }}
 
         <input type="submit" name="create user">
       </form>
