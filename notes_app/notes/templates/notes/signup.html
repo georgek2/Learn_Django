@@ -125,7 +125,7 @@
     </style>
 
     <header style="padding: 30px 0 40px">
-      <div class="user">
+      <div style="margin-left: 40px;" class="user">
         <a href="{% url 'login' %}"><button>Login</button></a>
         <a href="{% url 'signup' %}"><button>Signup</button></a>
       </div>
@@ -143,11 +143,27 @@
 
       <form method="POST" action="">
         {% csrf_token %} 
-        
-        {{ form.as_p }}
+        <!-- Username -->
+        {{ form.username.label }}
+        {{ form.username }}
+        <!-- Email -->
+        {{ form.email.label }}
+        {{ form.email }}
+        <!-- Password -->
+        {{ form.password1.label }}
+        {{ form.password1 }}
+        <!-- Retype Password -->
+        {{ form.password2.label }}
+        {{ form.password2 }}
+
         <br>
         <input type="submit" name="Create User" />
+
       </form>
+
+      <!-- Not working: To research more -->
+      <h2>{{ form.errors }}</h2>
+
     </div>
   </body>
 </html>

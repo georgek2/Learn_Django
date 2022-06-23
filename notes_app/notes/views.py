@@ -3,11 +3,15 @@ from django.shortcuts import redirect, render
 from .models import Topic
 from .forms import TopicForm, UserForm
 
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
+from django.contrib.auth import authenticate, login, logout
+
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
+@login_required(login_url='login')
 def homepage(request):
 
     topics = Topic.objects.all()
@@ -18,6 +22,7 @@ def homepage(request):
     return render(request, 'notes/home.html', context)
 
 
+@login_required(login_url='login')
 def topic(request, id):
 
     item = Topic.objects.get(id = id)
@@ -73,6 +78,8 @@ def add_topic(request):
 
             form.save()
 
+        redirect('/')
+
     return render(request, 'notes/update.html', context)
 
 
@@ -84,15 +91,33 @@ def signup(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, "Account created for " + user)
 
-            redirect('login')
+            return redirect('login')
 
     return render(request, 'notes/signup.html', context)
 
 
-def login(request):
+def loginPage(request):
+    
     form = UserForm()
     context = {'form': form}
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        # If user in database
+        if user:
+            login(request, user)
+
+            return redirect('homepage')
+
+        else: 
+            messages.info(request, 'User details incorrect..!!')
 
     return render(request, 'notes/login.html', context)
 
