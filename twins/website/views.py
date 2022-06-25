@@ -1,7 +1,10 @@
 from django.shortcuts import redirect, render
 
-from django.contrib.auth.forms import UserCreationForm
+from .forms import UserForm
 
+from django.contrib import messages
+
+from django.contrib.auth import authenticate, login, logout 
 # Create your views here.
 
 def index(request):
@@ -9,22 +12,37 @@ def index(request):
     return render(request, 'website/index.html')
 
 
-def login(request):
+def loginPage(request):
 
-    return render(request, 'website/login.html')
+    form = UserForm()
+    context = {'form': form}
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password1']
+        user = authenticate(request, username = username, password = password)
+
+        if user is not None:
+            
+            if user.is_active:
+                login(request, user)
+
+                return redirect('home')
+
+    return render(request, 'website/login.html', context)
 
 def register(request):
 
-    form = UserCreationForm()
+    form = UserForm()
 
     context = {'form': form}
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
             form.save()
 
-        return redirect('/login')
+            return redirect('login')
 
     return render(request, 'website/register.html', context)
 

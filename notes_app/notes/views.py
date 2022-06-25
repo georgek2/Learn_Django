@@ -106,18 +106,16 @@ def loginPage(request):
 
     if request.method == 'POST':
         username = request.POST.get('username')
-        password = request.POST.get('password')
+        password = request.POST.get('password1') # Asshole
 
         user = authenticate(request, username=username, password=password)
 
         # If user in database
-        if user:
-            login(request, user)
+        if user is not None:
+            login(request, user) # FUCK this line of code.
 
             return redirect('homepage')
 
-        else: 
-            messages.info(request, 'User details incorrect..!!')
 
     return render(request, 'notes/login.html', context)
 
