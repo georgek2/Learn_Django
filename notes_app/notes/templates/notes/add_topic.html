@@ -1,6 +1,16 @@
 {% extends 'notes/base.html' %}
 
 
+{% block header %}
+
+<span>Hello {{ request.user }}</span>
+
+<a style="margin-left:4%" href="{% url 'logout' %}"><button>Logout</button></a>
+
+{% endblock header %}
+
+
+
 {% block content %}
 
     <div id="update">

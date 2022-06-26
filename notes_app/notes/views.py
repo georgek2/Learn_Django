@@ -5,6 +5,7 @@ from .forms import TopicForm, UserForm
 
 from django.contrib import messages
 
+# User Authentication and Authorization
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.decorators import login_required
@@ -62,6 +63,7 @@ def edit_topic(request, id):
 
     return render(request, 'notes/edit.html', context)
 
+@login_required(login_url='login')
 def add_topic(request):
 
     topics = Topic.objects.all()
@@ -80,23 +82,28 @@ def add_topic(request):
 
         redirect('/')
 
-    return render(request, 'notes/update.html', context)
+    return render(request, 'notes/add_topic.html', context)
 
 
 def signup(request):
-    form = UserForm()
-    context = {'form': form}
 
-    if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, "Account created for " + user)
+    if request.user.is_authenticated:
 
-            return redirect('login')
+        return redirect('homepage')
+    else:
+        form = UserForm()
+        context = {'form': form}
 
-    return render(request, 'notes/signup.html', context)
+        if request.method == 'POST':
+            form = UserForm(request.POST)
+            if form.is_valid():
+                form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, "Account created for " + user)
+
+                return redirect('login')
+
+        return render(request, 'notes/signup.html', context)
 
 
 def loginPage(request):
@@ -104,23 +111,38 @@ def loginPage(request):
     form = UserForm()
     context = {'form': form}
 
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password1') # Asshole
+    if request.user.is_authenticated:
 
-        user = authenticate(request, username=username, password=password)
+        return redirect('homepage')
 
-        # If user in database
-        if user is not None:
-            login(request, user) # FUCK this line of code.
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password1')
 
-            return redirect('homepage')
+            # Check the user in the database
+            user = authenticate(request, username=username, password=password)
+
+            # If user in database
+            if user is not None:
+                login(request, user) # FUCK this line of code.
+
+                return redirect('homepage')
+            
+            # Incase of incorrect details
+            else:
+                messages.info(request, 'Username or Password Incorrect')
 
 
-    return render(request, 'notes/login.html', context)
+        return render(request, 'notes/login.html', context)
 
 
+# Logout users
+def logoutUser(request):
 
+    logout(request)
+
+    return redirect('login')
 
 
 

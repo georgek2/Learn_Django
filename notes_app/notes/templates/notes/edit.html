@@ -1,5 +1,20 @@
 {% extends 'notes/base.html' %}
 
+{% block title %}
+<title>Edit Topic *</title>
+{% endblock title %}
+
+
+{% block header %}
+
+<span>Hello {{ request.user }}</span>
+
+<a style="margin-left:4%" href="{% url 'logout' %}"><button>Logout</button></a>
+
+{% endblock header %}
+
+
+
 
 {% block content %}
 

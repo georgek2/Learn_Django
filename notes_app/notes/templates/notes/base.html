@@ -146,9 +146,10 @@
     </style>
 
     <header style="padding: 30px 0 40px">
-      <div style="margin-left: 40px;" class="user">
-        <a href="{% url 'login' %}"><button>Login</button></a>
-        <a href="{% url 'signup' %}"><button>Signup</button></a>
+      <div style="margin-left: 4%; padding-bottom: 4px;" id="hello-user">
+        {% block header %}
+          
+        {% endblock header %}
       </div>
       <div class="logo">
         <p style="font-size: 38px; color: rgb(107, 19, 19);">
